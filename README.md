@@ -1,5 +1,6 @@
 Do not work on Master.
 'Feature branches' are the flavour of the day.  So please branch.
+Always branch from 'Master,' and not from other branches.
 
 Pull requests can't be approved until they're reviewed by a peer.
 Once approved, the pull request can be manually merged.
