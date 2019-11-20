@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+/* html {
+    height:100%;
+    width:100%;
+    } */
+
+body {
+   
+    height:100%;
+    padding: 10px;
+    background-image: linear-gradient(to bottom right, lightpink, rgb(245, 111, 200));
+   
+    }
+
+    
+.outer {
+    background-color: white;  
+    }  
+
+.topheader {
+    display: flex;
+    font-family: 'Lobster';
+    justify-content: flex-start;
+    padding: 4px 40px 10px 50px;   
+    color: white;
+    font-size: 100px;
+    font-family: 'Lobster';
+    display: flex;
+    justify-content: center;
+    transform: rotate(-10deg);
+    color: rgb(245, 111, 200);
+    }
+ 
+
+
+.topheader:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s; 
+    
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite; 
+    }
+    
+    @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
+
+
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    }
+    
+.rehome {
+    padding: 20px 20px 1px 50px;  
+    color: black;
+    font-size: 30px;
+    font-family: 'Kaushan Script', cursive;
+    display: flex;
+    text-align: start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+
+    /* flex-direction: column;
+    justify-content: center;
+    text-shadow:5px 5px 5px red; */
+
+    color:hotpink;
+   
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+    @-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+    
+
+nav ul {
+    list-style-type: none;
+    margin: 5px;
+    padding: 20px 100px 1px 1px;
+    overflow: hidden; 
+    font-size: 2pc;
+    }
+      
+nav li {
+    float: right;
+    }
+      
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    background-color: hotpink;
+    border: 4px solid hotpink;
+    border-radius: 80%;
+    }
+      
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+    background-color: #111;
+    } 
+
+ 
+
+span {
+    color:purple
+    }
+
+
+  
+.contentcontainer{
+   
+    /* padding:0 10px 10px 10px; */
+    height: 100%
+}
+
+
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media and (min-width: 576px) { 
+    body {
+        background-color: orange;
+    }      
+ }
+
+/* Review projects table after I've learnt bootstrap */
+
+.peep{
+
+
+width: 70px;
+height: 70px;
+background-color: red;
+position: relative;
+-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+animation-name: example;
+animation-duration: 4s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+0%   {background-color:red; left:0px; top:0px;}
+25%  {background-color:yellow; left:300px; top:0px;}
+/* 50%  {background-color:blue; left:200px; top:200px;}
+75%  {background-color:green; left:0px; top:200px;}*/
+100% {background-color:red; left:0px; top:0px;} 
+}
+
+/* Standard syntax */
+@keyframes example {
+0%   {background-color:red; left:0px; top:0px;}
+25%  {background-color:yellow; left:300px; top:0px;}
+
+/* 50%  {background-color:blue; left:200px; top:200px;}
+75%  {background-color:green; left:0px; top:200px;} */
+100% {background-color:red; left:0px; top:0px;}
+} 
+
+
+
+.peep {
+    /* height: 30%; */
+    background-image: linear-gradient();
+    
+}
+
+    img {
+        height:90%;
+        width: 100%;
+        
+    }
+
+
+
+.innercontainer{
+    background-image: url("giftdraftimage3.jpg");
+    
+    width: 100%;
+    height: 100%;
+    height: 800px;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+        position: relative;
+        text-align: left;
+        color: black;
+        font-weight: 900;
+        font-size:20px;
+      
+}
+
+.top-right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+   
+
+}
+
+.housemove  {
+
+    display: inline-flex;
+   
+    /* justify-content: space-evenly; */
+    width: 80%;
+    padding: 80px 200px 80px 100px;
+ 
+    background-image: url("houses.jpg");
+    background-repeat: no-repeat;
+
+    
+}
+
+
+.peep{
+    padding: 0;
+}
+
+.moveit{
+    justify-self: self-end;
+    justify-content: right;
+}
+
