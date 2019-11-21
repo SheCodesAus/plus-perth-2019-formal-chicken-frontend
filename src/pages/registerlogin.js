@@ -1,6 +1,6 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom'
-import {RegisterForm} from '../sections/registerform';
+import RegisterForm from '../sections/RegisterForm';
 import {LoginForm} from '../sections/loginform';
 
 
