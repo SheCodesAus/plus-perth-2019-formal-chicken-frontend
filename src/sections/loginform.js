@@ -3,6 +3,7 @@ import React from 'react';
 export function LoginForm(props){
 
     // I will eventually contact django here
+    //Once User's accounts are set up properly we can connect
     const handleFormSubmit = (e) => {
         e.preventDefault()
         props.setLoggedIn(true)
