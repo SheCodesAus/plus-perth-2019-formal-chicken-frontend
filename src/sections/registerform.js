@@ -1,12 +1,7 @@
 import React from 'react';
-import Autocomplete from "./Autocomplete"
 
-export class RegisterForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.mapInput = React.createRef();
-  }
-  render() {
+
+export function RegisterForm(props){
     return(
       <>
                
@@ -22,7 +17,7 @@ export class RegisterForm extends React.Component {
               </label>
               <label>
                   Address
-                  <input type='text' id='autocomplete' name='address' ref={this.mapInput}/>
+                  <input type='text' id='autocomplete' name='address'/>
                   
               </label>
               <label>
@@ -33,12 +28,10 @@ export class RegisterForm extends React.Component {
                   Register
               </button>
           </form>
-          <Autocomplete mapInput={this.mapInput}/>
          
                   
     </>
-    );
-  }
+    )
 }
   
  
