@@ -2,7 +2,7 @@ import React from 'react';
 import {Redirect} from 'react-router-dom'
 import {RegisterForm} from '../sections/registerform';
 import {LoginForm} from '../sections/loginform';
-
+import "../pages/registerlogin.css";
 
 
 export function Registerpage(props){
@@ -10,6 +10,7 @@ export function Registerpage(props){
     const [whichForm, setWhichFrom] = React.useState('login')
 
     return(
+        <>
       <div>
 
         {props.loggedIn === true && <Redirect to="/account" />}
@@ -25,8 +26,9 @@ export function Registerpage(props){
                 <button onClick={() => setWhichFrom('login')}>I already have an account!</button>
             </div>
         }
-
+    <div className="container"></div>
      
       </div>  
+      </>
     )
 }

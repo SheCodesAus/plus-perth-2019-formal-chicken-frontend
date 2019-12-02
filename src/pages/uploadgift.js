@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 // import {Header} from '../sections/header';
+import "../pages/uploadgift.css";
+
+
 import axios from 'axios';
 
 //Nanwen I will fix this and make it function based asap, sorry!
@@ -63,9 +66,13 @@ export class Uploadgiftpage extends React.Component {
 
 
   render() {
+    
     const { gift_name, gift_description } = this.state;
     return (
-      <div>
+      <>
+      
+      
+      <div classname="myform">
       <form>
         <input
             type="text"
@@ -86,9 +93,18 @@ export class Uploadgiftpage extends React.Component {
               accept="image/png, image/jpeg"  onChange={this.handleImageChange}/>
         <button type='submit' onClick={this.handleSubmit} value='submit'>Find me a sista to gifta</button>
       </form>
-       <Link to="/account">Go back to your account</Link>
+       <Link to="/account"><h5>Back to my account</h5></Link>
        </div>
+       <h4>
+      Remember your item must not be alive, dead or undead
+      </h4>
+      <div className="contain1">
+      </div>
+      </>
+    
       );
+
+      
     }
   }  
 

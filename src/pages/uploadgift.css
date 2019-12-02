@@ -1,0 +1,21 @@
+
+  
+  .myform{
+    font-size: 30px;
+    font-family: 'Kaushan Script', cursive;
+  }
+
+  h5{
+    font-size: 30px;
+    font-family: 'Kaushan Script', cursive;
+  }
+
+
+  .contain1{
+    background-image: url("C:\SheCodes\plus-perth-2019-formal-chicken-frontend\src\styles\giftline.jpg");
+    height:1000px;
+    width: 800px;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+  }
