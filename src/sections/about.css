@@ -86,7 +86,7 @@
         width: 80%;
         padding: 80px 200px 5px 100px;
      
-        background-image: url("C:\SheCodes\plus-perth-2019-formal-chicken-frontend\src\styles\twohouses.jpg");
+        background-image: url("..\styles\twohouses.jpg");
         background-repeat: no-repeat;
         opacity: 0.5;
         filter: alpha(opacity=50); /* For IE8 and earlier */
@@ -107,7 +107,7 @@
     .peepgift{
         height:100%;
         width: 100%;
-          background-image: url("C:\SheCodes\plus-perth-2019-formal-chicken-frontend\src\styles\giftdraftimage3.jpg");
+          background-image: url("..\styles\giftdraftimage3.jpg");
     }
     
 

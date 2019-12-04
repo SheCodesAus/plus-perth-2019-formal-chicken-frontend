@@ -12,7 +12,7 @@
 
 
   .contain1{
-    background-image: url("C:\SheCodes\plus-perth-2019-formal-chicken-frontend\src\styles\giftline.jpg");
+    background-image: url("..\styles\giftline.jpg");
     height:1000px;
     width: 800px;
     background-repeat: no-repeat;

@@ -1,6 +1,6 @@
 .container{
 
-    background-image: url("C:\SheCodes\plus-perth-2019-formal-chicken-frontend\src\styles\regift.png");
+    background-image: url("..\styles\regift.png");
     background-repeat: no-repeat;
     height: 1000px;
     opacity: 0.5;
