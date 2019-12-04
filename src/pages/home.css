@@ -1,0 +1,122 @@
+.topheader {
+    display: flex;
+    font-family: 'Lobster';
+    justify-content: flex-start;
+    padding: 0px;   
+    margin: 0;
+    margin-bottom: 0%;
+    color: white;
+    font-size: 80px;
+    font-family: 'Lobster';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: rotate(-10deg); */
+    color: rgb(245, 111, 200);
+    height: 280px;
+  }
+ 
+h1{
+	padding: 0 0 0 10px;
+}
+    
+@media screen and (max-width: 600px) {
+    .topheader {
+      font-size: 30px;
+    }
+  }
+
+   
+h3 {
+    padding: 20px 20px 1px 50px;  
+    color: black;
+    font-size: 30px;
+    font-family: 'Kaushan Script', cursive;
+    display: flex;
+    text-align: start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+
+    /* flex-direction: column;
+    justify-content: center;
+    text-shadow:5px 5px 5px red; */
+
+    color:hotpink;
+   
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+      }
+      
+    @-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h3 {
+      font-size: 15px;
+    }
+  }
+
+
+body {
+   
+    height:100%;
+    padding: 10px;
+    /* background-image: linear-gradient(to bottom right, lightpink, rgb(245, 111, 200)); */
+    background-image: lightpink;
+   
+    }
+
+
+
+
+
+
+
+.bow{
+    background-image: url("C:\SheCodes\plus-perth-2019-formal-chicken-frontend\src\styles\giftdraftimage4.jpg");
+    
+    width: 100%;
+    height: 100%;
+    height: 800px;
+    opacity: 0.8;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+        position: relative;
+        text-align: left;
+        color: black;
+        font-weight: 900;
+        font-size:20px;
+      
+}
+
+
+.topheader:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s; 
+    
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite; 
+    }
+    
+    @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+    }
