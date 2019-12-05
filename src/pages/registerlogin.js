@@ -26,7 +26,7 @@ export function Registerpage(props){
                 <button onClick={() => setWhichFrom('login')}>I already have an account!</button>
             </div>
         }
-    <div className="container"></div>
+    <div className="containerme"></div>
      
       </div>  
       </>

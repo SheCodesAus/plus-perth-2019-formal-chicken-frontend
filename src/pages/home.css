@@ -70,7 +70,8 @@ body {
     height:100%;
     padding: 10px;
     /* background-image: linear-gradient(to bottom right, lightpink, rgb(245, 111, 200)); */
-    background-image: lightpink;
+    background-image: #FF7BAD;
+  
    
     }
 
@@ -86,7 +87,7 @@ body {
     width: 100%;
     height: 100%;
     height: 800px;
-    opacity: 0.8;
+    /* opacity: 0.8; */
     background-repeat: no-repeat;
     background-size: cover;
   
@@ -96,6 +97,13 @@ body {
         font-weight: 900;
         font-size:20px;
       
+}
+
+
+@media screen and (max-width: 600px) {
+  .bow{
+    background-image: none;
+  }
 }
 
 

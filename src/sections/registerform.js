@@ -34,7 +34,10 @@ export class RegisterForm extends React.Component {
               </button>
           </form>
           <Autocomplete mapInput={this.mapInput}/>
+
          
+     
+      
                   
     </>
     );

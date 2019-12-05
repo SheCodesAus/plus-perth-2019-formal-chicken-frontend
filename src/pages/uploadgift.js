@@ -93,11 +93,12 @@ export class Uploadgiftpage extends React.Component {
               accept="image/png, image/jpeg"  onChange={this.handleImageChange}/>
         <button type='submit' onClick={this.handleSubmit} value='submit'>Find me a sista to gifta</button>
       </form>
-       <Link to="/account"><h5>Back to my account</h5></Link>
-       </div>
-       <h4>
+      <h4>
       Remember your item must not be alive, dead or undead
       </h4>
+       <Link to="/account"><h5>Back to my account</h5></Link>
+       </div>
+       
       <div className="contain1">
       </div>
       </>

@@ -11,25 +11,25 @@ export function About(){
 
 
 
-        <div class="housemove">
+        <div className="rehome">
+              
+              You have a loved but unwanted gift needing a new home?
+              <br></br> 
+              Find their forever home right here!
+  
+  
+              <br></br>
+              Join us in our quest to rehome your pressie to someone who will appreciate it ... and see what you are regifted in return!
+          </div>
+
+          <div class="housemove">
                             
             <div class="peep">
              
              
               
             </div> 
-            
-
-        </div>
-
-        <div className="rehome">
-              
-              You have a loved but unwanted gift needing a new home? Find their forever home right here!
-  
-  
-              <br></br>
-              Join us in our quest to rehome your pressie to someone who will appreciate it ... and see what you are regifted in return!
-          </div>
+            </div>
          
         </>
     )

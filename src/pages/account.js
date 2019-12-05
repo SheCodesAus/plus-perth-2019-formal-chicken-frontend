@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
 import {Swap} from '../components/swap';
+import "../pages/account.css";
+
 
 // should come from django
 const SwapData = [
@@ -38,10 +40,10 @@ const SwapData = [
 
 export function Accountpage(){
     return(
-      <div>
-        the account page
+      <div className="account">
+        <h6>Regifting Status</h6>
 
-        <Link to="/uploadgift">New Swap</Link>
+        <Link to="/uploadgift"><h4>New Swap</h4></Link>
 
         {/* list of swaps */}
         <ul className="list-group">

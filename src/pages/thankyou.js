@@ -15,7 +15,7 @@ export function Thankyoupage(props){
               Warm and fuzzy message:
               <input type="thankyou" name='thankyou'/>
           </label>
-          <button type='submit'>Send</button>
+          <button class = "mybutt" type='submit'>Send</button>
       </form>
   )
 }
