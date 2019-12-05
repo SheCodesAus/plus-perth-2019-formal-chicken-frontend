@@ -17,7 +17,7 @@
     
     height:1000px;
     width: 1700px;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     opacity: 0.5;
     filter: alpha(opacity=50); /* For IE8 and earlier */
   }
@@ -33,3 +33,5 @@
       display: none;
     }
   }
+
+ 

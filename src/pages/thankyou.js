@@ -1,5 +1,6 @@
 import React from 'react';
 import {Header} from '../sections/header';
+import "../pages/thankyou.css";
 
 export function Thankyoupage(props){
     // I will eventually contact django here
@@ -9,6 +10,7 @@ export function Thankyoupage(props){
   }
 
   return(
+      <>
       <form action="/" method="post" onSubmit={handleFormSubmit}>
           <h2>Send your thank you to *Their name here* </h2>
           <label>
@@ -17,5 +19,9 @@ export function Thankyoupage(props){
           </label>
           <button class = "mybutt" type='submit'>Send</button>
       </form>
+      <div className="thankx">
+          
+      </div>
+      </>
   )
 }

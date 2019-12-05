@@ -1,5 +1,5 @@
 .mybutt{
-    color:yellow;
+    color:hotpink;
     text-align: center;
     padding: 10px 10px 10px 10px;
     text-decoration: none;
@@ -14,3 +14,15 @@
     color: rgb(16, 153, 172);
   }
   
+
+  .thankx{
+    background-image: url("..\styles\thanks.jpg");
+    width: 100%;
+    height: 100%;
+  
+
+    background-repeat: no-repeat;
+    padding: 500px 0 0 500px;
+    background-size: 90%;
+    background-size: contain;
+  }
