@@ -82,7 +82,7 @@ body {
 
 
 .bow{
-    background-image: url("C:\SheCodes\plus-perth-2019-formal-chicken-frontend\src\styles\giftdraftimage4.jpg");
+    background-image: url("..\styles\giftdraftimage4.jpg");
     
     width: 100%;
     height: 100%;
