@@ -19,7 +19,7 @@ export function About(){
   
   
               <br></br>
-              Join us in our quest to rehome your pressie to someone who will appreciate it ... and see what you are regifted in return!
+              Join us in our quest to rehome pressies to people who will appreciate them ... & see what you are regifted in return!
           </div>
 
           <div class="housemove">
