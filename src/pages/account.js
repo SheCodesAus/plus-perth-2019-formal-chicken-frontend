@@ -47,9 +47,11 @@ export function Accountpage(){
       )
     }
 
+    const name = user.first_name ? user.first_name : user.username
+
     return(
       <div>
-        the account page
+        Welcome back {name}!
 
         <Link to="/uploadgift">New Swap</Link>
 
