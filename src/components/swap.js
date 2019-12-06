@@ -8,13 +8,13 @@ export function Swap(props) {
 
     return (
         <li className="list-group-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                        <h5 class="card-title">Your swap for:</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{data.giftName}</h6>
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm">
+                        <h5 className="card-title">Your swap for:</h5>
+                        <h6 className="card-subtitle mb-2 text-muted">{data.giftName}</h6>
                     </div>
-                    <div class="col-sm">
+                    <div className="col-sm">
                         {data.status === 'pending-match' && 
                             <>
                                 <h3>Pending Match 💌</h3>

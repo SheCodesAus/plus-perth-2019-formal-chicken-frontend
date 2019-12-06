@@ -1,7 +1,18 @@
 import React from 'react';
 import {Header} from '../sections/header';
+import { useAppState } from '../app-state'
+import { Redirect } from 'react-router-dom'
 
 export function Thankyoupage(props){
+
+    const { user } = useAppState()
+
+    if (!user) {
+      return (
+        <Redirect to={'registerlogin'} />
+      )
+    }
+
     // I will eventually contact django here
     const handleFormSubmit = (e) => {
       e.preventDefault()

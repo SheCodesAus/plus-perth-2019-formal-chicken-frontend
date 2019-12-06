@@ -1,25 +1,45 @@
 import React from 'react';
+import {login} from '../api/api';
 
 export function LoginForm(props){
+    const [username, setusername] = React.useState('');
+    const [password, setpassword] = React.useState('');
 
-    // I will eventually contact django here
-    //Once User's accounts are set up properly we can connect
-    const handleFormSubmit = (e) => {
+    const [error, setLoginError] = React.useState(null);
+
+    const handleFormSubmit = async (e) => {
         e.preventDefault()
-        props.setLoggedIn(true)
+        setLoginError(null)
+        try {
+            const user = await login(username, password)
+            props.onLogin(user)
+        } catch (error) {
+            setLoginError(error.detail)
+        }
+    }
+
+    const handlesetusername = (e) => {
+        setusername(e.target.value)
+    }
+
+    const handlesetpassword = (e) => {
+        setpassword(e.target.value)
     }
 
     return(
         <form action="/" method="post" onSubmit={handleFormSubmit}>
             <h2>Login</h2>
             <label>
-                Email
-                <input type='text' name='email'/>
+                username
+                <input value={username} type='text' name='username' onChange={handlesetusername} required/>
             </label>
             <label>
-                Password
-                <input type="password" name='password'/>
+                password
+                <input value={password} type="password" name='password' onChange={handlesetpassword} required/>
             </label>
+
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+
             <button type='submit'>Login</button>
         </form>
     )

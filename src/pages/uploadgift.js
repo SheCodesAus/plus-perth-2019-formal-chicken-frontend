@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {useAppState} from '../app-state'
+import {Link, Redirect} from 'react-router-dom';
 // import {Header} from '../sections/header';
 import "../pages/uploadgift.css";
 
@@ -8,30 +9,27 @@ import axios from 'axios';
 
 //Nanwen I will fix this and make it function based asap, sorry!
 
-export class Uploadgiftpage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state ={
-      gift_name: '',
-      gift_description: '',
-      gift_photo: null
-      };
+export function Uploadgiftpage() {
 
-  
-    this.handleChangeName =this.handleChangeName.bind(this);  
-    this.handleChangeDesc =this.handleChangeDesc.bind(this);  
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleImageChange = this.handleImageChange.bind(this);
+  const { user } = useAppState()
+  const [gift_name, setgift_name] = React.useState('')
+  const [gift_description, setgift_description] = React.useState('')
+  const [gift_photo, setgift_photo] = React.useState(null)
+
+  if (!user) {
+    return (
+      <Redirect to={'registerlogin'} />
+    )
   }
 
-  handleChangeName = (event) => {
+  const handleChangeName = (event) => {
     console.log(event.target.value)
     this.setState({
       gift_name: event.target.value,
     })
   };
 
-  handleChangeDesc = (event) => {
+  const handleChangeDesc = (event) => {
     console.log(event.target.value)
     this.setState({
       gift_description: event.target.value,
@@ -39,7 +37,7 @@ export class Uploadgiftpage extends React.Component {
   };
 
 
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     console.log(this.state);
     let form_data = new FormData();
@@ -58,20 +56,16 @@ export class Uploadgiftpage extends React.Component {
         .catch(err => console.log(err))
   };
 
-  handleImageChange = (event) => {
+  const handleImageChange = (event) => {
     this.setState({
       gift_photo: event.target.files[0]
     })
   };
 
-
-  render() {
+  return (
+    <>
     
-    const { gift_name, gift_description } = this.state;
-    return (
-      <>
-      
-      
+    
       <div classname="myform">
       <form>
         <input
@@ -93,19 +87,17 @@ export class Uploadgiftpage extends React.Component {
               accept="image/png, image/jpeg"  onChange={this.handleImageChange}/>
         <button type='submit' onClick={this.handleSubmit} value='submit'>Find me a sista to gifta</button>
       </form>
-       <Link to="/account"><h5>Back to my account</h5></Link>
-       </div>
-       <h4>
+        <Link to="/account"><h5>Back to my account</h5></Link>
+        </div>
+        <h4>
       Remember your item must not be alive, dead or undead
       </h4>
       <div className="contain1">
       </div>
-      </>
-    
-      );
+    </>
+  
+    );
 
-      
-    }
   }  
 
 

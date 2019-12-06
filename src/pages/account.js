@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
+import { useAppState } from '../app-state'
 import {Swap} from '../components/swap';
 
 // should come from django
@@ -37,6 +38,15 @@ const SwapData = [
 ]
 
 export function Accountpage(){
+
+    const { user } = useAppState()
+
+    if (!user) {
+      return (
+        <Redirect to={'registerlogin'} />
+      )
+    }
+
     return(
       <div>
         the account page

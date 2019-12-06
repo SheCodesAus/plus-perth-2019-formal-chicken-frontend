@@ -13,7 +13,7 @@ export function About(){
 
         <div class="housemove">
                             
-            <div class="peep">
+            <div className="peep">
              
              
               

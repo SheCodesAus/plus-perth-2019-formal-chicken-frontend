@@ -1,48 +1,97 @@
 import React from 'react';
 import Autocomplete from "./Autocomplete"
+import {register, login} from "../api/api"
 
-export class RegisterForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.mapInput = React.createRef();
-  }
-  render() {
+export const RegisterForm = (props) => {
+    const [username, setusername] = React.useState('');
+    const [password, setpassword] = React.useState('');
+    const [email, setemail] = React.useState('');
+    const [firstname, setfirstname] = React.useState('');
+    const [lastname, setlastname] = React.useState('');
+    const [address, setaddress] = React.useState('');
+
+    const [error, setError] = React.useState(null);
+
+    const addressInputRef = React.useRef(null)
+  
+    const handleFormSubmit = async (e) => {
+        e.preventDefault()
+
+        if (!username || !password || !email || !firstname || !lastname || !address) {
+            setError('You need to fill out all forms before we can create an account for you')
+            return
+        }
+
+        setError(null)
+        
+        try {
+            const user = await register(username, password, email, firstname, lastname, address)
+            props.onRegister(user)
+        } catch (error) {
+            setError(error.detail)
+        }
+    }
+
+    const handlesetusername = (e) => {
+        setusername(e.target.value)
+    }
+    const handlesetpassword = (e) => {
+        setpassword(e.target.value)
+    }
+    const handlesetemail = (e) => {
+        setemail(e.target.value)
+    }
+    const handlesetfirstname = (e) => {
+        setfirstname(e.target.value)
+    }
+    const handlesetlastname = (e) => {
+        setlastname(e.target.value)
+    }
+    const handlesetaddress = (e) => {
+        setaddress(e.target.value)
+    }
+        
     return(
-      <>
-               
-          <form action="/" method="post">
-              <h2>Register</h2>
-              <label>
-                  User Name
-                  <input type='text' name='username'/>
-              </label>
-              <label>
-                  Email
-                  <input type='text' name='email'/>
-              </label>
-              <label>
-                  Address
-                  <input type='text' id='autocomplete' name='address' ref={this.mapInput}/>
-                  
-              </label>
-              <label>
-                  Password
-                  <input type='password' name='password'/>
-              </label>
-              <button type='submit'>
-                  Register
-              </button>
-          </form>
-          <Autocomplete mapInput={this.mapInput}/>
-         
-                  
+    <>
+                
+        <form action="/" method="post" onSubmit={handleFormSubmit}>
+            <h2>Register</h2>
+            <label>
+                User Name
+                <input value={username} type='text' name='username' onChange={handlesetusername} required/>
+            </label>
+            <label>
+                Firstname
+                <input value={firstname} type='text' name='password' onChange={handlesetfirstname}/>
+            </label>
+            <label>
+                Lastname
+                <input value={lastname} type='text' name='password' onChange={handlesetlastname}/>
+            </label> <label>
+                Email
+                <input value={email} type='email' name='email' onChange={handlesetemail} required/>
+            </label>
+            <label>
+                Address
+                <input value={address} type='text' id='autocomplete' name='address' onChange={handlesetaddress} ref={addressInputRef}/>                  
+            </label>
+            <label>
+                Password
+                <input value={password} type='text' name='password' onChange={handlesetpassword} required/>
+            </label>
+            <button type='submit'>
+                Register
+            </button>
+
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+        </form>
+        <Autocomplete mapInput={addressInputRef}/>
+        
+                
     </>
     );
-  }
 }
   
- 
-
 
 
 // import React, { Component } from 'react';
