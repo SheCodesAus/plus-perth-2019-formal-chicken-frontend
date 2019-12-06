@@ -51,7 +51,7 @@ export function Accountpage(){
 
     return(
       <div>
-        Welcome back {name}!
+        Welcome {name}!
 
         <Link to="/uploadgift">New Swap</Link>
 
