@@ -23,27 +23,29 @@ export function Uploadgiftpage() {
   }
 
   const handleChangeName = (event) => {
-    console.log(event.target.value)
-    this.setState({
-      gift_name: event.target.value,
-    })
+    // console.log(event.target.value)
+    // this.setState({
+      // gift_name: event.target.value,
+    // })
+    setgift_name(event.target.value)
   };
 
   const handleChangeDesc = (event) => {
     console.log(event.target.value)
-    this.setState({
-      gift_description: event.target.value,
-    })
+    // this.setState({
+      // gift_description: event.target.value,
+    // })
+    setgift_description(event.target.value)
   };
 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
+   // console.log(this.state);
     let form_data = new FormData();
-    form_data.append('gift_photo', this.state.gift_photo);
-    form_data.append('gift_name', this.state.gift_name);
-    form_data.append('gift_description', this.state.gift_description);
+    form_data.append('gift_photo', setgift_photo);
+    form_data.append('gift_name', setgift_name);
+    form_data.append('gift_description', setgift_description);
     let url = 'http://localhost:8000/api/gift/?format=api';
     axios.post(url, form_data, {
       headers: {
@@ -57,9 +59,10 @@ export function Uploadgiftpage() {
   };
 
   const handleImageChange = (event) => {
-    this.setState({
-      gift_photo: event.target.files[0]
-    })
+    //this.setState({
+     // gift_photo: event.target.files[0]
+    //})
+    setgift_photo(event.target.files[0])
   };
 
   return (
@@ -73,19 +76,19 @@ export function Uploadgiftpage() {
             name="gift_name"
             placeholder="name of gift"
             value={gift_name}
-            onChange={this.handleChangeName}
+            onChange={handleChangeName}
           />
         <input
             type="text"
             name="gift_description"
             placeholder="brief gift description"
             value={gift_description}
-            onChange={this.handleChangeDesc}
+            onChange={handleChangeDesc}
           />
           <input type="file"
               id="gift_photo"
-              accept="image/png, image/jpeg"  onChange={this.handleImageChange}/>
-        <button type='submit' onClick={this.handleSubmit} value='submit'>Find me a sista to gifta</button>
+              accept="image/png, image/jpeg"  onChange={handleImageChange}/>
+        <button type='submit' onClick={handleSubmit} value='submit'>Find me a sista to gifta</button>
       </form>
         <Link to="/account"><h5>Back to my account</h5></Link>
         </div>
