@@ -16,10 +16,7 @@ export async function login(username, password) {
 
         return myuser;
     } catch (error) {
-        if (error.response) {
-            throw error.response.data
-        }
-        throw error
+        throwErrorDetail(error)
     }
 }
 
@@ -39,10 +36,7 @@ export async function register(username, password, email, first_name, last_name,
         await login(username, password) // also log the user in
         return user
     } catch (error) {
-        if (error.response) {
-            throw error.response.data
-        }
-        throw error
+        throwErrorDetail(error)
     }
 }
 
@@ -57,10 +51,7 @@ export async function whoAmI() {
         localStorage.removeItem(ME)
 
     } catch (error) {
-        if (error.response) {
-            throw error.response.data
-        }
-        throw error
+        throwErrorDetail(error)
     }
 }
 
@@ -74,10 +65,7 @@ export async function getUsers(id) {
         })
         return result
     } catch (error) {
-        if (error.response) {
-            throw error.response.data
-        }
-        throw error
+        throwErrorDetail(error)
     }
 }
 
@@ -91,10 +79,7 @@ export async function getGifts(id) {
         })
         return result
     } catch (error) {
-        if (error.response) {
-            throw error.response.data
-        }
-        throw error
+        throwErrorDetail(error)
     }
 }
 
@@ -108,10 +93,7 @@ export async function getSwaps(id) {
         })
         return result
     } catch (error) {
-        if (error.response) {
-            throw error.response.data
-        }
-        throw error
+        throwErrorDetail(error)
     }
 }
 
@@ -131,6 +113,7 @@ function getCommonConfig(excludeToken = false) {
     }
 }
 
+// handles refreshing tokens given the access one only lasts 5 min?
 async function doAuthenticatedRequest(reqFn) {
     try {
         const result = await reqFn()
@@ -141,10 +124,23 @@ async function doAuthenticatedRequest(reqFn) {
         if (errorIsTokenError) {
             const refreshURL = 'http://127.0.0.1:8000/api/token/refresh/'
             const refresh = localStorage.getItem(REFRESH_TOKEN)
-            const response = await axios.post(refreshURL, { refresh }, getCommonConfig(true))
-            localStorage.setItem(response.data.access, ACCESS_TOKEN)
-            localStorage.setItem(response.data.refresh, REFRESH_TOKEN)
+            try {
+                const response = await axios.post(refreshURL, { refresh }, getCommonConfig(true))
+                localStorage.setItem(response.data.access, ACCESS_TOKEN)
+                localStorage.setItem(response.data.refresh, REFRESH_TOKEN)
+                const result = await reqFn()
+                return result
+            } catch (error) {
+                throwErrorDetail(error)
+            }
         }
         throw e
     }
+}
+
+function throwErrorDetail(error) {
+    if (error.response) {
+        throw error.response.data
+    }
+    throw error
 }
