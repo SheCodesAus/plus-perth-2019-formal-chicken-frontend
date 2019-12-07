@@ -43,10 +43,10 @@ export function Uploadgiftpage() {
     event.preventDefault();
    // console.log(this.state);
     let form_data = new FormData();
-    form_data.append('gift_photo', setgift_photo);
-    form_data.append('gift_name', setgift_name);
-    form_data.append('gift_description', setgift_description);
-    let url = 'http://localhost:8000/api/gift/?format=api';
+    form_data.append('gift_photo', gift_photo);
+    form_data.append('gift_name', gift_name);
+    form_data.append('gift_description', gift_description);
+    let url = 'http://localhost:8000/sista_regifta/gift/';
     axios.post(url, form_data, {
       headers: {
         'content-type': 'multipart/form-data'
@@ -54,6 +54,7 @@ export function Uploadgiftpage() {
     })
         .then(response => {
           console.log(response.data);
+          window.location.reload();
         })
         .catch(err => console.log(err))
   };
