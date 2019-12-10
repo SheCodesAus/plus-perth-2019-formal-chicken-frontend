@@ -2,6 +2,8 @@ import React from 'react';
 import {Link, Redirect} from 'react-router-dom'
 import { useAppState } from '../app-state'
 import {Swap} from '../components/swap';
+import "../pages/account.css";
+
 
 // should come from django
 const SwapData = [
@@ -50,10 +52,10 @@ export function Accountpage(){
     const name = user.first_name ? user.first_name : user.username
 
     return(
-      <div>
-        Welcome {name}!
+      <div className="account">
+        <h6>Regifting Status</h6>
 
-        <Link to="/uploadgift">New Swap</Link>
+        <Link to="/uploadgift"><h4>New Swap</h4></Link>
 
         {/* list of swaps */}
         <ul className="list-group">

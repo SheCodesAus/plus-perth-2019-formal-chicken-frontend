@@ -1,0 +1,26 @@
+.account {
+    background-image: url("..\styles\giftline.jpg");
+    
+   
+    background-repeat: repeat-x;
+   
+}
+
+
+h6{
+    text-align: center;  
+    font-size: 50px;
+    color: hotpink;  
+   
+}
+
+h4{
+    color: limegreen;
+    padding: 0 0 0 200px;
+
+}
+
+
+a:hover {
+    color: hotpink;
+  }

@@ -96,6 +96,9 @@ export function Uploadgiftpage() {
         <h4>
       Remember your item must not be alive, dead or undead
       </h4>
+       <Link to="/account"><h5>Back to my account</h5></Link>
+       </div>
+       
       <div className="contain1">
       </div>
     </>

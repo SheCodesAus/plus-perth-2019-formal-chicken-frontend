@@ -27,7 +27,6 @@ export const RegisterForm = (props) => {
         try {
             const user = await register(username, password, email, firstname, lastname, address)
             props.onRegister(user)
-        } catch (error) {
             setError(error.detail)
         }
     }

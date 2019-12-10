@@ -6,8 +6,9 @@ body {
    
   height:100%;
   padding: 10px;
-  background-image: linear-gradient(to bottom right, lightpink, rgb(245, 111, 200));
+  background-image: linear-gradient(to bottom right, #f189b1 rgb(245, 111, 200));
   background-image: lightpink;
+  background-color:#FB4880; 
  
   }
 

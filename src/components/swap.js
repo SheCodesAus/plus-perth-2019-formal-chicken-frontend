@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {Link} from 'react-router-dom'
+import "../components/swap";
 export function Swap(props) {
 //${props.matched.name}
     const { data } = props
@@ -55,7 +56,7 @@ export function Swap(props) {
                                     <>
                                         <h3>Received your gift? Send a thanks! 📫</h3>
                                         <form>
-                                            <Link to={`/thankyou?`} >Send a warm and fuzzy!</Link>
+                                            <Link to={`/thankyou?`} >Send thnkx</Link>  
                                         </form>
                                     </>
                                 }

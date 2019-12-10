@@ -8,14 +8,30 @@
   h5{
     font-size: 30px;
     font-family: 'Kaushan Script', cursive;
+    padding: 0 0 0 50px;
   }
 
 
   .contain1{
     background-image: url("..\styles\giftline.jpg");
+    
     height:1000px;
-    width: 800px;
-    background-repeat: no-repeat;
+    width: 1700px;
+    background-repeat: repeat-x;
     opacity: 0.5;
     filter: alpha(opacity=50); /* For IE8 and earlier */
   }
+
+
+  h4{
+    padding: 30px;
+  }
+
+
+  @media screen and (max-width: 600px) {
+    .contain1{
+      display: none;
+    }
+  }
+
+ 
